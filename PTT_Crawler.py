@@ -42,8 +42,7 @@ def article(doc):
     return post 
 #定位到r-ent, 取得r-ent以下的資料
 
-UserInput = input('Pages = ') #讓user輸入讀取頁數
-Page = int(UserInput) #將user輸入的字串轉為int
+Page = int(input('Page =')) #讓user輸入讀取頁數, 並將user輸入的字串轉為int
 
 res = fetch(url) 
 post = article(res.text)
