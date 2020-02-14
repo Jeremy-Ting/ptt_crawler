@@ -42,6 +42,9 @@ def article(doc):
     return post 
 #定位到r-ent, 取得r-ent以下的資料
 
+UserInput = input('Pages = ') #讓user輸入讀取頁數
+Page = int(UserInput) #將user輸入的字串轉為int
+
 res = fetch(url) 
 post = article(res.text)
 for entry in post: 
@@ -60,7 +63,8 @@ def get_pre_link(doc):
     return link
 #取得下一頁連結
 
-Page = 10 #讀取頁數設定
+
+print (Page)
 if Page > 1: #頁數大於1才執行
     for loop in range(Page):
         pre_link = get_pre_link(res.text)
@@ -76,4 +80,3 @@ if Page > 1: #頁數大於1才執行
     #持續往前取得前一頁的資料
 else:
     print("到此結束, 僅有一頁")
-    
